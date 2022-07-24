@@ -1,4 +1,5 @@
-import { Negociacoes } from "./negociacoes.js"
+import { Negociacao } from "../models/negociacao.js"
+import { Negociacoes } from "../models/negociacoes.js"
 
 export class NegociacoesView {
   private elemento: HTMLElement
@@ -18,7 +19,7 @@ export class NegociacoesView {
           <tr>
         </thead>
         <tbody>
-          ${model.lista().map(negociacao => {
+          ${model.lista().map((negociacao: Negociacao) => {
             return `
               <tr>
                 <td>${new Intl.DateTimeFormat().format(negociacao.data)}</td>
